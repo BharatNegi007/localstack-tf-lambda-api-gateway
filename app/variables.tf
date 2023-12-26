@@ -16,6 +16,16 @@ variable "api_domain_name" {
 # ---------------------
 # LAMBDA FUNCTIONS
 # ---------------------
+variable "create_function" {
+  type = bool 
+  default = true
+}
+
+variable "create_layer" {
+  type = bool
+  default = true
+}
+
 variable "runtime" {
   type    = string
   default = "nodejs18.x"
