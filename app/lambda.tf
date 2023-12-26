@@ -53,5 +53,15 @@ data "aws_iam_policy_document" "this" {
 }
 
 resource "aws_lambda_function" "this" {
-  # TO FILL IN
+  count = local.create && var.create_function && !var.create_layer ? 1 : 0
+
+  function_name                      = local.function_name
+  description                        = var.description
+  role                               = aws_iam_role.this.arn
+  handler                            = var.package_type != "Zip" ? null : var.handler
+  memory_size                        = var.memory_size
+  runtime                            = var.runtime
+  architectures                      = var.architectures
+  package_type                       = var.package_type
+  filename                           = local.lambda_zip_name
 }

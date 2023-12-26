@@ -21,6 +21,11 @@ variable "runtime" {
   default = "nodejs18.x"
 }
 
+variable "description" {
+  type    = string
+  default = "helloworld-localstack-lambda-function"
+}
+
 variable "architectures" {
   type    = list(string)
   default = ["x86_64"]
