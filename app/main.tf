@@ -1,6 +1,6 @@
 locals {
   create          = var.create_function
-  apigateway_name = var.name
+  apigateway_name = var.api_name
   function_name   = var.name
   lambda_zip_name = "${path.module}/lambda.${random_string.r.result}.zip"
 }

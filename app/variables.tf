@@ -1,6 +1,26 @@
 # ---------------------
 # API GATEWAY
 # ---------------------
+variable "api_name" {
+  type = string
+  default = "helloworld-localstack"
+}
+
+variable "api_description" {
+  type = string
+  default = "Test"
+}
+
+variable "resource_path" {
+  type = string
+  default = "/"
+}
+
+variable "http_method" {
+  type = string
+  default = "GET"
+}
+
 variable "stage" {
   description = "API Gateway Stage, default to `test`."
   type        = string
