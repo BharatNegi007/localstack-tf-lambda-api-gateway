@@ -1,5 +1,16 @@
-image: <pick the image you think is the most suitable to complete the task>
+default:
+  image: 
+    name: public.ecr.aws/docker/library/alpine:edge
+  tags: 
+    - test
+
+variables:
+  KMS_KEY_ID: ""
+  ENVIRONMENT: ""
 
 stages:
+  - initialization
+  - authorization
+  - build
   - test
   - deploy
