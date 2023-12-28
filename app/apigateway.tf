@@ -4,7 +4,7 @@ resource "aws_lambda_permission" "this" {
   function_name = aws_lambda_function.this.function_name
   principal     = "apigateway.amazonaws.com"
 
-  source_arn = "${aws_api_gateway_rest_api.this.execution_arn}/*/*"
+  source_arn = "${aws_api_gateway_rest_api.my_api.execution_arn}/*/*"
 }
 #--------------------------
 # Create an API Gateway
