@@ -19,8 +19,30 @@ stages:
 before_script:
   - npm install  # Install dependencies before running tests
 
+initialization:
+  stage: initialization
+  script:
+    - echo "Initialization steps go here"
+
+authorization:
+  stage: authorization
+  script:
+    - echo "Authorization steps go here"
+
+build:
+  stage: build
+  script:
+    - echo "Build steps go here"
+
 test: 
   stage: test
   image: $NODE_IMAGE
-  scripts: 
+  script: 
     - npm test
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deployment steps go here"
+  only:
+    - master  # Deploy only on changes to the master branch

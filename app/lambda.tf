@@ -53,7 +53,7 @@ data "aws_iam_policy_document" "this" {
 }
 
 resource "aws_lambda_function" "this" {
-  count = local.create && var.create_function && !var.create_layer ? 1 : 0
+  count = local.create ? 1 : 0
 
   function_name                      = local.function_name
   description                        = var.description

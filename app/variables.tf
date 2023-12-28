@@ -13,7 +13,7 @@ variable "api_description" {
 
 variable "resource_path" {
   type = string
-  default = "/"
+  default = "myresource"
 }
 
 variable "http_method" {
@@ -38,11 +38,6 @@ variable "api_domain_name" {
 # ---------------------
 variable "create_function" {
   type = bool 
-  default = true
-}
-
-variable "create_layer" {
-  type = bool
   default = true
 }
 
